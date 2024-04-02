@@ -2,6 +2,8 @@
     --orange: rgb(254, 110, 62);
     --orange-hov: rgb(255, 78, 11);
     --black: rgb(46, 46, 62);
+    --gray-text: rgb(141, 141, 141);
+    --gray: rgb(204, 204, 204);
     --transparent-white: rgba(240, 240, 240, 0.8);
 }
 
@@ -170,4 +172,111 @@ header nav button.active::after {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+}
+
+
+/*
+    Menu 
+*/
+
+
+#content #menu {
+    max-width: 900px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 6rem 4rem;
+    margin-bottom: 3rem;
+}
+
+#content #menu .menu-header {
+    display: grid;
+    gap: 0.5rem;
+}
+
+#content #menu .menu-header .description {
+    color: var(--orange);
+    font-size: 1.4rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#content #menu .menu-header .description::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 2px;
+    border-radius: 8px;
+    background-color: var(--gray);
+}
+
+#content #menu .menu-header .title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#content #menu .categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem 5rem;
+}
+
+#content #menu .category .title {
+    color: var(--orange);
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+#content #menu .category .items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+#content #menu .category .item {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    grid-template-areas:
+        "image image image"
+        "title line price"
+        "ingredients ingredients ingredients";
+}
+
+#content #menu .category .item .item-image {
+    grid-area: image;
+    width: min(100%, 20rem);
+    margin-bottom: 0.3rem;
+}
+
+#content #menu .category .item .item-title {
+    grid-area: title;
+}
+
+#content #menu .category .item .item-line {
+    grid-area: line;
+    justify-self: center;
+    width: 95%;
+    height: 1px;
+    background-color: var(--gray);
+}
+
+#content #menu .category .item .item-ingredients {
+    grid-area: ingredients;
+
+}
+
+#content #menu .category .item .item-price {
+    grid-area: price;
+}
+
+#content #menu .category .item-ingredients {
+    font-size: 0.9rem;
+    color: var(--gray-text);
 }
