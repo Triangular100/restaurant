@@ -1,5 +1,6 @@
 :root {
     --orange: rgb(254, 110, 62);
+    --orange-hov: rgb(255, 78, 11);
     --black: rgb(46, 46, 62);
     --transparent-white: rgba(240, 240, 240, 0.8);
 }
@@ -78,4 +79,94 @@ header nav button::after {
 header nav button:hover::after,
 header nav button.active::after {
     opacity: 1;
+}
+
+/* Page content styles */
+
+#content {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    color: var(--black);
+}
+
+#content #home {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-auto-rows: 1fr;
+
+}
+
+#content #home .home-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-top: 7rem;
+}
+
+#content #home .home-content > * {
+    margin: 0 3rem;
+}
+
+#content #home .home-content .description {
+    margin: 2rem 3rem;
+    color: rgb(120, 120, 120);
+}
+
+#content #home .home-content .title {
+    margin-bottom: 5rem;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+#content #home .home-content .menu-button {
+    padding: 1rem;
+    margin-bottom: min(25%, 7rem);
+
+    cursor: pointer;
+
+    color: white;
+    background-color: var(--orange);
+    box-shadow: -2px 2px 5px grey;
+    border-radius: 4px;
+
+}
+
+#content #home .home-content .menu-button:hover {
+    background-color: var(--orange-hov);
+}
+
+/* Last child */
+#content #home .home-content .contact {
+    margin-left: 0;
+    margin-bottom: 2rem;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 40% min-content;
+    gap: 1rem;
+    align-items: center;
+}
+
+#content #home .home-content .contact .line {
+    height: 2px;
+    background-color: var(--orange);
+}
+
+#content #home .home-content .contact .icon {
+    height: 1.5rem;
+}
+
+#content #home .home-content .contact .icon:hover {
+    filter: invert(34%) sepia(57%) saturate(2679%) hue-rotate(355deg) brightness(103%) contrast(102%);
+}
+
+#content #home .image {
+    background: url(./img/diner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
