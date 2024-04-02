@@ -5,6 +5,7 @@
     --gray-text: rgb(141, 141, 141);
     --gray: rgb(204, 204, 204);
     --transparent-white: rgba(240, 240, 240, 0.8);
+    --less-transparent-white: rgba(240, 240, 240, 0.85);
 }
 
 * {
@@ -279,4 +280,90 @@ header nav button.active::after {
 #content #menu .category .item-ingredients {
     font-size: 0.9rem;
     color: var(--gray-text);
+}
+
+
+/* 
+    About
+*/
+
+
+#content #about {
+    width: 100%;
+    min-height: 100vh;
+    background: url(./img/backsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    display: flex;
+    justify-content: center;
+}
+
+#content #about .about-section {
+    background-color: var(--less-transparent-white);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+
+    height: fit-content;
+    width: min(80%, 800px);
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+    padding: 3rem;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#content #about .about-section .image {
+    align-self: center;
+    min-width: 4rem;
+    width: 100%;
+    max-width: 15rem;
+    border-radius: 50%;
+}
+
+#content #about .about-section .title {
+    color: var(--orange);
+    font-size: 1.4rem;
+
+    width: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#content #about .about-section .title::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 2px;
+    border-radius: 8px;
+    background-color: var(--gray-text);
+}
+
+#content #about .about-section .subtitle {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#content #about .about-section .description {
+    font-size: 0.9rem;
+}
+
+#content #about .about-section .contact {
+    display: grid;
+    grid-auto-flow: column;
+}
+
+#content #about .about-section .contact .icon {
+    height: 1.5rem;
+}
+
+#content #about .about-section .contact .icon:hover {
+    filter: invert(34%) sepia(57%) saturate(2679%) hue-rotate(355deg) brightness(103%) contrast(102%);
 }
