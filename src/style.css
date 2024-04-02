@@ -1,5 +1,81 @@
+:root {
+    --orange: rgb(254, 110, 62);
+    --black: rgb(46, 46, 62);
+    --transparent-white: rgba(240, 240, 240, 0.8);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* Reset button style */
+button {
+    display: block;
+    font-family: inherit;
+    font-size: 100%;
+    border: none;
+    background-color: inherit;
+    width: fit-content;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styles */
+
+header {
+    position: absolute;
+    width: 100%;
+    background-color: var(--transparent-white);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    box-shadow: 0 0 10px gray;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem 0.5rem;
+}
+
+header nav button {
+    height: 1.8rem;
+    width: 4rem;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--black);
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+header nav button::after {
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--orange);
+    content: "";
+    opacity: 0;
+    transition: all 0.4s ease-in;
+}
+
+header nav button:hover::after,
+header nav button.active::after {
+    opacity: 1;
 }
